@@ -1,0 +1,31 @@
+<section class="omnichannel-section">
+  <div class="section-shell">
+    <div class="section-copy">
+      <p class="eyebrow">Omnichannel Inbox</p>
+      <h2>WhatsApp at the core.</h2><h2 style="color: brown;">Conversations everywhere.</h2>
+      <p class="section-description">
+        Start with WhatsApp and naturally extend to every channel your customers love.
+        Manage website chat, WhatsApp, SMS, calls and other social channels from one unified inbox.
+      </p>
+    </div>
+
+    <div class="orbit-stage" aria-label="Omnichannel communication diagram">
+      <div class="orbit orbit-outer"></div>
+      <div class="orbit orbit-inner"></div>
+
+      <div class="channel-core">
+        <span class="whatsapp-mark" aria-hidden="true" [innerHTML]="iconSvg(whatsappIcon)"></span>
+      </div>
+
+      <div
+        *ngFor="let channel of channels"
+        class="channel-node"
+        [ngClass]="channel.className"
+      >
+        <span class="channel-icon">{{ channel.icon }}</span>
+        <span class="channel-label">{{ channel.label }}</span>
+      </div>
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,20 @@
+<main class="success-page">
+  <section class="success-card">
+    <p class="eyebrow">Registration complete</p>
+    <h1>You have successfully registered.</h1>
+    <p class="lede">
+      We have sent a password setup link to
+      <strong>{{ email || 'your email address' }}</strong>.
+      Please set your password immediately. The link will expire soon.
+    </p>
+
+    <div class="notice">
+      <p>After setting your password, open your dashboard and continue with the embedded signup flow.</p>
+    </div>
+
+    <div class="actions">
+      <a class="primary" [href]="passwordSetupUrl || dashboardUrl" target="_blank" rel="noopener noreferrer">Set Password</a>
+      <a class="secondary" routerLink="/signup">Continue Embedded Signup</a>
+    </div>
+  </section>
+</main>

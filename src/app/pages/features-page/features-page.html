@@ -1,0 +1,44 @@
+<main class="features-page">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Features</p>
+      <h1>Animated chat that shows how Omnifai works.</h1>
+      <p class="lede">
+        A live-feeling WhatsApp flow for automation, scheduling, lead capture, and support.
+      </p>
+
+      <div class="hero-actions">
+        <a routerLink="/signup" class="primary">Start Signup</a>
+        <a routerLink="/pricing" class="secondary">View Pricing</a>
+      </div>
+    </div>
+
+    <div class="chat-stage" aria-label="Animated WhatsApp conversation">
+      <div class="chat-card">
+        <div class="chat-header">
+          <span class="dot"></span>
+          <span>OmnifAI Assistant</span>
+        </div>
+
+        <div class="chat-thread">
+          <div
+            *ngFor="let message of messages"
+            class="bubble"
+            [class.user]="message.type === 'user'"
+            [class.bot]="message.type === 'bot'"
+            [style.animationDelay]="message.delay">
+            {{ message.text }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature-strip">
+    <article class="point-card" *ngFor="let item of featurePoints">
+      <div class="point-icon">{{ item.icon }}</div>
+      <h2>{{ item.title }}</h2>
+      <p>{{ item.text }}</p>
+    </article>
+  </section>
+</main>

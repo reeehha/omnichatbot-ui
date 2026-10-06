@@ -1,0 +1,112 @@
+<div class="pricing-container">
+
+  <p class="eyebrow">Pricing</p>
+  <h1 class="pricing-title">Simple plans for every stage</h1>
+
+  <ng-container *ngIf="pricingReady; else pricingLoadingState">
+    <p class="pricing-subtitle">{{ getCurrencySubtitle() }}</p>
+
+    <div class="billing-switcher" role="group" aria-label="Billing cycle">
+      <button
+        type="button"
+        class="billing-option"
+        [class.active]="billingCycle === 'monthly'"
+        (click)="setBillingCycle('monthly')">
+        Monthly
+      </button>
+      <button
+        type="button"
+        class="billing-option"
+        [class.active]="billingCycle === 'annually'"
+        (click)="setBillingCycle('annually')">
+        Annual
+      </button>
+    </div>
+
+    <div class="plans">
+      <div
+        class="plan-card"
+        *ngFor="let plan of plans"
+        [class.popular]="plan.isPopular">
+
+        <div class="popular-badge" *ngIf="plan.isPopular">
+          {{ plan.accent }}
+        </div>
+        <div class="plan-kicker" *ngIf="plan.accent && !plan.isPopular">{{ plan.accent }}</div>
+
+        <div class="plan-header">
+          <h2>{{ plan.name }}</h2>
+
+          <ng-container *ngIf="getSelectedPromoPrice(plan) !== null && !hasCustomPricing(plan); else regularPricing">
+            <p class="plan-price promo-price">
+              <span class="price promo-offer">{{ formatPrice(getSelectedPromoPrice(plan)) }}</span>
+              <span class="period">{{ getBillingPeriodLabel() }}</span>
+            </p>
+            <div class="plan-original">
+              <span class="original-label">Original price</span>
+              <span class="promo-original">{{ formatPrice(getSelectedPrice(plan)) }}</span>
+            </div>
+          </ng-container>
+          <ng-template #regularPricing>
+            <p class="plan-price" *ngIf="!hasCustomPricing(plan); else customPricing">
+              <span class="price">{{ formatPrice(getSelectedPrice(plan)) }}</span>
+              <span class="period">{{ getBillingPeriodLabel() }}</span>
+            </p>
+            <ng-template #customPricing>
+              <p class="plan-price">
+                <span class="price custom">{{ getCustomPricingLabel(plan) }}</span>
+              </p>
+            </ng-template>
+          </ng-template>
+        </div>
+
+        <div class="plan-content">
+          <ul class="features">
+            <li *ngFor="let feat of visibleFeatures(plan)">{{ feat }}</li>
+          </ul>
+
+          <button
+            *ngIf="hasMoreFeatures(plan)"
+            type="button"
+            class="expand-button"
+            (click)="togglePlan(plan.name)"
+            [attr.aria-expanded]="isPlanExpanded(plan.name)">
+            {{ isPlanExpanded(plan.name) ? 'Show less' : 'View all features' }}
+          </button>
+
+          <a
+            class="plan-button"
+            [routerLink]="['/signup']"
+            [queryParams]="getSignupQueryParams(plan.name)">
+            {{ plan.buttonText }}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="note">
+      <p>Need custom onboarding? Talk to our sales team for a tailored setup.</p>
+    </div>
+
+    <div class="cta">
+      <button type="button" class="talk-sales" (click)="openSalesChat()">Talk to our Sales Team</button>
+    </div>
+
+    <div class="terms-footnote">
+      <a [href]="termsUrl">Terms and conditions apply</a>
+    </div>
+  </ng-container>
+
+  <ng-template #pricingLoadingState>
+    <div class="pricing-loading" *ngIf="!pricingLoadFailed; else pricingErrorState">
+      <p>Loading pricing for your region...</p>
+    </div>
+  </ng-template>
+
+  <ng-template #pricingErrorState>
+    <div class="pricing-loading">
+      <p>Pricing is unavailable right now. Please try again in a moment.</p>
+    </div>
+  </ng-template>
+
+</div>

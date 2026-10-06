@@ -1,0 +1,89 @@
+<div class="page-wrapper" id="home">
+
+    <!-- ===== First Section: Hero + Chat + Spline ===== -->
+    <section class="hero-section">
+      <div class="section__content">
+  
+        <!-- Hero Text -->
+        <div class="hero-text">
+          <div class="hero-badge">
+            <svg
+              class="meta-icon"
+              viewBox="0 0 128 82"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <defs>
+                <linearGradient id="metaBadgeGradient" x1="10%" y1="10%" x2="90%" y2="90%">
+                  <stop offset="0%" stop-color="#0866ff" />
+                  <stop offset="100%" stop-color="#1d9bf0" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M14 60C14 32 27 12 42 12C55 12 66 26 79 48C89 65 98 74 106 74C114 74 118 67 118 56C118 32 106 12 89 12C74 12 64 27 49 50C37 68 28 74 20 74C11 74 6 67 6 56C6 32 18 12 34 12C49 12 60 25 74 44"
+                fill="none"
+                stroke="url(#metaBadgeGradient)"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="12"
+              />
+          </svg>
+            <span>Meta Business Partners</span>
+          </div>
+          <h1>Convert all your leads to business!</h1>
+          <div class="hero-sub">
+            <p>
+              Scale your audience, boost engagement, and drive sales across WhatsApp using powerful automation tools.
+            </p>
+            <button class="cta-btn" (click)="goToPricing()">Get Started</button>
+          </div>
+        </div>
+  
+        <!-- Hero Chat Simulation -->
+        <div class="hero-chat">
+          <div *ngFor="let msg of visibleMessages" class="chat-bubble" [ngClass]="msg.type">
+            {{ msg.text }}
+          </div>
+        </div>
+  
+        <!-- Hero Spline Viewer -->
+        <div class="hero-spline">
+          <spline-viewer url="https://prod.spline.design/RBj3DgNM9nIBwsW1/scene.splinecode"></spline-viewer>
+        </div>
+  
+      </div>
+    </section>
+    <!-- <section>
+      <div class="page-wrapper">
+        <section>
+          <div class="section__content">
+            
+            <svg>
+              <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">
+                TEXT TO BLOW UP
+              </text>
+            </svg>
+          </div>
+        </section>
+        <section>
+          <video
+            src="https://assets.codepen.io/605876/chameleon.mp4"
+            autoplay
+            playsinline
+            muted
+            loop
+          ></video>
+          <div class="section__content">
+            <h2>Animations run off the main thread!</h2>
+            <p class="text-overlay">
+              Animations can be driven by either the scroll position of a container or an element's position within a
+              container! All with no JavaScript.<br />Pretty cool.
+            </p>
+          </div>
+        </section>
+    </div>
+    
+    </section> -->
+  
+  </div>
+  

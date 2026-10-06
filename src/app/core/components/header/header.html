@@ -1,0 +1,89 @@
+<header class="site-header">
+  <a class="logo" routerLink="/" fragment="home" aria-label="Omnifai home">
+    <img src="images/omnifai-logo.png" alt="" />
+    <span>OmnifAI</span>
+  </a>
+
+  <nav class="nav-links" aria-label="Primary navigation">
+    <a routerLink="/" fragment="home">Home</a>
+    <a href="https://dashboard.omnifai-fzco.com/login">Sign In</a>
+    <a routerLink="/pricing">Pricing</a>
+    <a routerLink="/" fragment="contact">Contact</a>
+  </nav>
+</header>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <a
+    class="bottom-nav__item"
+    href="https://dashboard.omnifai-fzco.com/login"
+    aria-label="Sign in"
+  >
+    <span class="bottom-nav__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+        <path
+          d="M12 12.2a4.2 4.2 0 1 0-4.2-4.2A4.2 4.2 0 0 0 12 12.2Zm7 8.3a7 7 0 0 0-14 0"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.8"
+        />
+        <path
+          d="M16.5 10.5h4m0 0-1.8-1.8M20.5 10.5l-1.8 1.8"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.8"
+        />
+      </svg>
+    </span>
+    <span class="bottom-nav__label">Sign In</span>
+  </a>
+
+  <a class="bottom-nav__item" routerLink="/pricing" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }" aria-label="Pricing">
+    <span class="bottom-nav__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+        <path
+          d="M4 6h16M7 6v12m10-12v12M5 18h14"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.8"
+        />
+        <path
+          d="M8.5 10h7M8.5 14h4.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-width="1.8"
+        />
+      </svg>
+    </span>
+    <span class="bottom-nav__label">Pricing</span>
+  </a>
+
+  <a class="bottom-nav__item" routerLink="/" fragment="contact" aria-label="Contact">
+    <span class="bottom-nav__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+        <path
+          d="M20 16.5a2.5 2.5 0 0 1-2.5 2.5H8l-4 3v-3.5A2.5 2.5 0 0 1 1.5 16V6.5A2.5 2.5 0 0 1 4 4h13.5A2.5 2.5 0 0 1 20 6.5v10Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.8"
+        />
+        <path
+          d="M7 9h10M7 12h7"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-width="1.8"
+        />
+      </svg>
+    </span>
+    <span class="bottom-nav__label">Contact</span>
+  </a>
+</nav>

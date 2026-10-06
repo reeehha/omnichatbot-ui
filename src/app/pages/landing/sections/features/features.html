@@ -1,0 +1,43 @@
+<div class="main-header">
+  <div class="background-icons-layer">
+    <img src="icons/growth.svg" alt="" class="bg-icon">
+    <img src="icons/idea.svg" alt="" class="bg-icon">
+    <img src="icons/rocket.svg" alt="" class="bg-icon">
+    <img src="icons/chart.svg" alt="" class="bg-icon">
+    <img src="icons/money.svg" alt="" class="bg-icon">
+    <img src="icons/target.svg" alt="" class="bg-icon">
+  </div>
+
+  <div class="marquee-box">
+    <div class="marquee-track" aria-label="Everything you need to run and automate your business on WhatsApp">
+      <span>EVERYTHING YOU NEED TO RUN AND AUTOMATE YOUR BUSINESS ON WHATSAPP •</span>
+      <span>EVERYTHING YOU NEED TO RUN AND AUTOMATE YOUR BUSINESS ON WHATSAPP •</span>
+      <span>EVERYTHING YOU NEED TO RUN AND AUTOMATE YOUR BUSINESS ON WHATSAPP •</span>
+      <span>EVERYTHING YOU NEED TO RUN AND AUTOMATE YOUR BUSINESS ON WHATSAPP •</span>
+    </div>
+  </div>
+
+
+  <div class="chat-scatter">
+    <div
+      class="chat-bubble-shell"
+      *ngFor="let card of cards; let i = index"
+      [style.animationDelay]="card.delay + 's'"
+      [class.right]="card.align === 'right'"
+      [class.left]="card.align === 'left'"
+      [style.transform]="bubbleTransform(i, card.drift)">
+      <article class="chat-bubble-card">
+        <div class="bubble-head">
+          <span class="bubble-icon" aria-hidden="true" [innerHTML]="iconSvg(card.icon)"></span>
+          <h3>
+            {{ card.title }}
+            <span class="bubble-inline-tag">Feature</span>
+          </h3>
+        </div>
+        <p>{{ card.desc }}</p>
+      </article>
+    </div>
+  </div>
+
+  <!-- <div class="scroll-hint">Scroll to move the bubbles</div> -->
+</div>
