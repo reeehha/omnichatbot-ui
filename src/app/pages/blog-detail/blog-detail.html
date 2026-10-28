@@ -1,0 +1,99 @@
+ 
+<section class="blog-detail-page">
+
+ 
+  <a routerLink="/blog" class="back-link">
+    <span>←</span> Back to all articles
+  </a>
+
+  <!-- Article Header -->
+  <header class="article-header">
+
+    <span class="article-category">
+      {{ blog?.category || 'Omnifai Guide' }}
+    </span>
+
+    <h1>
+      {{ blog?.title  }}
+    </h1>
+
+  </header>
+
+  <!-- Main Article -->
+  <article class="article-content">
+
+    @if (article) {
+
+      <!-- Introduction -->
+      <app-blog-intro
+  [heading]="article.introHeading"
+  [paragraphs]="article.intro">
+</app-blog-intro>
+
+      <!-- Article Sections -->
+      @for (section of article.sections; track section.stepNumber) {
+
+        <!-- Text-only section when layout is text -->
+        @if (!section.image) {
+
+         <app-blog-text-section
+  [stepNumber]="section.stepNumber"
+  [heading]="section.heading"
+  [paragraphs]="section.paragraphs"
+  [content]="getSectionContent(section)">
+</app-blog-text-section>
+
+        } @else {
+
+          <!-- Section with image -->
+          <app-blog-step-with-image
+            [stepNumber]="section.stepNumber"
+            [heading]="section.heading"
+            [paragraphs]="section.paragraphs"
+            [content]="getSectionContent(section)"
+            [image]="section.image"
+            [imageAlt]="section.imageAlt"
+            [caption]="section.caption"
+            [reverse]="section.reverse">
+          </app-blog-step-with-image>
+
+        }
+
+      }
+
+      <!-- Tips -->
+      @if (article.tips.length) {
+        <app-blog-tips
+          title="Tips to Remember"
+          [tips]="article.tips">
+        </app-blog-tips>
+      }
+
+      @if (relatedArticle) {
+        <aside class="related-article">
+          <a [routerLink]="['/blog', relatedArticle.slug]">{{ relatedArticle.linkText }}</a>
+        </aside>
+      }
+
+      <!-- Conclusion -->
+     <app-blog-conclusion
+  [title]="article.conclusionTitle"
+  [paragraphs]="article.conclusion">
+</app-blog-conclusion>
+    } @else {
+
+      <!-- Article Not Found -->
+      <div class="article-not-found">
+        <h2>Article not found</h2>
+        <p>The article you're looking for may have been moved or is unavailable.</p>
+
+        <a routerLink="/blog" class="back-to-blogs">
+          ← Back to all articles
+        </a>
+      </div>
+
+    }
+
+  </article>
+
+</section>

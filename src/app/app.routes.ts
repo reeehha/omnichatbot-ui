@@ -5,6 +5,8 @@ import { FeaturesPage } from './pages/features-page/features-page';
 import { Pricing } from './pages/pricing/pricing';
 import { Signup } from './pages/signup/signup';
 import { SignupSuccess } from './pages/signup-success/signup-success';
+import { Blog } from './pages/blog/blog';
+import { BlogDetail } from './pages/blog-detail/blog-detail';
 
 export const routes: Routes = [
   // Landing Layout
@@ -30,5 +32,17 @@ export const routes: Routes = [
   {
     path: 'signup/success',
     component: SignupSuccess,
+  },
+  {
+    path: 'blog',
+    component: Blog,
+  },
+  {
+    path: 'blog',
+    component: Blog,
+  },
+  {
+    path: 'blog/:slug',
+    component: BlogDetail,
   },
 ];
