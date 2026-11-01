@@ -17,7 +17,11 @@ export const customTemplatesArticle = {
       paragraphs: [
         'Navigate to Template in your Omnifai dashboard to view your existing templates and their statuses. Click + Create Template to begin creating a new template.'
       ],
-      content: [], image: '', imageAlt: '', caption: '', reverse: false
+      content: [],
+       image: 'assets/templates/createtemplate.png',
+        imageAlt: '',
+         caption: '',
+          reverse: false
     },
     {
       stepNumber: 'STEP 2',
@@ -32,7 +36,7 @@ export const customTemplatesArticle = {
           heading: 'Carousel Media Template',
           paragraphs: ['Showcase multiple products, services, or offers in swipeable cards. This format can suit restaurant menus, product collections, and promotional campaigns.']
         }
-      ], image: '', imageAlt: '', caption: '', reverse: false
+      ], image: 'assets/templates/selecttemplate.png', imageAlt: '', caption: '', reverse: false
     },
     {
       stepNumber: 'STEP 3',
@@ -74,7 +78,7 @@ export const customTemplatesArticle = {
             'Review the message layout, text, variables, and buttons in Live Preview. You can also inspect the payload preview to review the generated template structure. When ready, click Submit Template to submit it for the applicable approval process.'
           ]
         }
-      ], image: '', imageAlt: '', caption: '', reverse: false
+      ], image: 'assets/templates/generaltemplate.png', imageAlt: '', caption: '', reverse: false
     },
     {
       stepNumber: 'STEP 4',
@@ -123,7 +127,7 @@ export const customTemplatesArticle = {
             'When you are satisfied with the layout, click Submit Template to send it for the applicable approval process.'
           ]
         }
-      ], image: '', imageAlt: '', caption: '', reverse: false
+      ], image: 'assets/templates/customtemplate.png', imageAlt: '', caption: '', reverse: false
     },
     {
       stepNumber: 'STEP 5',

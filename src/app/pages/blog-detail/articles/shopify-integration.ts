@@ -17,7 +17,11 @@ export const shopifyIntegrationArticle = {
       paragraphs: [
         'Navigate to the Shopify Integration Setup page in your Omnifai dashboard. Here, you can configure your organization token, map Shopify events to WhatsApp message templates, and generate the information needed to connect your store through Zapier.'
       ],
-      content: [], image: '', imageAlt: '', caption: '', reverse: false
+      content: [],
+       image: 'assets/shopify/shopify.png',
+        imageAlt: '',
+        caption: '', 
+        reverse: false
     },
     {
       stepNumber: 'STEP 2',
@@ -31,7 +35,10 @@ export const shopifyIntegrationArticle = {
           heading: 'Keep your token secure',
           paragraphs: ['Avoid sharing your organization token publicly or including it in screenshots shared outside your team.']
         }
-      ], image: '', imageAlt: '', caption: '', reverse: false
+      ], image: 'assets/shopify/orgtoken.png',
+       imageAlt: '',
+        caption: '', 
+        reverse: false
     },
     {
       stepNumber: 'STEP 3',

@@ -9,6 +9,8 @@ import { customTemplatesArticle } from './custom-templates';
 import { teamManagementArticle } from './team-management';
 import { shopifyIntegrationArticle } from './shopify-integration';
 import { aiChatbotIntegrationArticle } from './ai-chatbot-integration';
+import { flowBuilderArticle } from './flow-builder';
+import { mcpConnectorArticle } from './mcp-connector';
 
 
 export const blogArticles = [
@@ -22,6 +24,8 @@ export const blogArticles = [
   customTemplatesArticle,
   teamManagementArticle,
   shopifyIntegrationArticle,
-  aiChatbotIntegrationArticle
+  aiChatbotIntegrationArticle,
+  mcpConnectorArticle,
+  flowBuilderArticle
 
 ];

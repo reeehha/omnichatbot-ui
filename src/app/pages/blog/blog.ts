@@ -95,6 +95,20 @@ export class Blog {
       excerpt: 'Configure an AI model, customize your chatbot’s response tone, and add business knowledge sources in Omnifai.',
       readTime: '6 min read'
     },
+    {
+      title: 'How to Create Your Own Chatbot Flow in Omnifai Using Flow Builder',
+      slug: 'create-chatbot-flow-with-flow-builder',
+      category: 'Step-by-Step Guide',
+      excerpt: 'Build a structured chatbot conversation in Omnifai using messages, buttons, input fields, lists, and connected nodes.',
+      readTime: '6 min read'
+    },
+    {
+      title: 'How to Connect Omnifai with AI Tools Using MCP',
+      slug: 'connect-omnifai-with-ai-tools-using-mcp',
+      category: 'AI Tool Integration Guide',
+      excerpt: 'Connect Omnifai to Claude, ChatGPT, and other MCP-compatible AI tools so they can work with your workspace data.',
+      readTime: '5 min read'
+    }
     
   ];
 
