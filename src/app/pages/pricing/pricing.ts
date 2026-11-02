@@ -82,6 +82,9 @@ export class Pricing implements OnInit {
         'Messaging Template Management',
         'Zapier Integration',
         'Carousel Messages',
+        'Broadcast Messaging',
+        'Chat Enhcnement',
+        
       ],
       buttonText: 'Get Started',
       accent: 'Free',
@@ -99,6 +102,10 @@ export class Pricing implements OnInit {
       apiPlanId: 'pro',
       features: [
         'Everything in Free',
+        'Coexistance',
+        'Blue Tick Verification Support',
+        'MCP Connector',
+        'CRM/ERP Integration',
         '5 Team Members',
         'Unlimited AI Agent',
         'Manager Monitoring',
