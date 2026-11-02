@@ -1,0 +1,79 @@
+
+<section class="testimonial-section">
+  <div class="testimonial-container">
+
+    <div class="testimonial-heading">
+      <span class="eyebrow">CUSTOMER STORIES</span>
+      <h2>What our customers say</h2>
+      <p>
+        Helping businesses simplify customer communication
+        and build better customer relationships.
+      </p>
+    </div>
+
+    <div class="testimonial-grid">
+
+      <article
+        class="testimonial-card"
+        *ngFor="let item of visibleTestimonials"
+      >
+        <div class="card-top"></div>
+
+        <div class="testimonial-content">
+          <div class="avatar" *ngIf="item.image; else initialsFallback">
+            <img [src]="item.image" [alt]="item.name + ' profile photo'" />
+          </div>
+
+          <ng-template #initialsFallback>
+            <div class="avatar avatar-initials">
+              {{ item.initials || item.name.charAt(0).toUpperCase() }}
+            </div>
+          </ng-template>
+
+          <div class="stars" aria-label="5 out of 5 stars">
+            ★★★★★
+          </div>
+
+          <h3>{{ item.name }}</h3>
+
+          <p class="customer-role">
+            {{ item.role }} · {{ item.company }}
+          </p>
+
+          <p class="review">
+            “{{ item.message }}”
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="carousel-controls">
+      <button
+        type="button"
+        class="nav-button"
+        (click)="previous()"
+        aria-label="Previous testimonials"
+      >
+        &#8592;
+      </button>
+
+      <span class="slide-count">
+        {{ activeIndex + 1 }} / {{ testimonials.length }}
+      </span>
+
+      <button
+        type="button"
+        class="nav-button"
+        (click)="next()"
+        aria-label="Next testimonials"
+      >
+        &#8594;
+      </button>
+    </div>
+
+    
+
+  </div>
+</section>
+
