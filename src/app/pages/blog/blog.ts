@@ -2,15 +2,55 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { SearchComponent } from '../../components/search/search';
+import { blogArticles } from '../blog-detail/articles/blog-articles';
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, SearchComponent],
   templateUrl: './blog.html',
   styleUrl: './blog.css',
 })
 export class Blog {
+
+  searchText = '';
+
+get filteredBlogs() {
+  const query = this.searchText.toLowerCase().trim();
+
+  if (!query) {
+    return this.blogs;
+  }
+
+  return this.blogs.filter(blog =>
+    [
+      blog.title,
+      blog.excerpt,
+      blog.category,
+      blog.slug,
+      this.getArticleSearchText(blog.slug),
+    ]
+      .filter(value => typeof value === 'string')
+      .some(value => value.toLowerCase().includes(query))
+  );
+}
+
+  private getArticleSearchText(slug: string): string {
+    const article = blogArticles.find(item => item.slug === slug);
+    if (!article) return '';
+
+    const collectText = (value: unknown): string[] => {
+      if (typeof value === 'string') return [value];
+      if (Array.isArray(value)) return value.flatMap(collectText);
+      if (typeof value === 'object' && value !== null) {
+        return Object.values(value).flatMap(collectText);
+      }
+      return [];
+    };
+
+    return collectText(article).join(' ');
+  }
 
   blogs = [
     {

@@ -14,7 +14,7 @@ export const routes: Routes = [
     path: '',
     component: LandingLayout,
     children: [
-      { path: '', component: Landing }
+      { path: '', pathMatch: 'full', component: Landing }
     ]
   },
   {
@@ -32,10 +32,6 @@ export const routes: Routes = [
   {
     path: 'signup/success',
     component: SignupSuccess,
-  },
-  {
-    path: 'blog',
-    component: Blog,
   },
   {
     path: 'blog',

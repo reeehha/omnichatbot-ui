@@ -1,60 +1,35 @@
-
 <section class="blog-page">
-
-  <!-- Blog Header -->
   <header class="blog-header">
     <span class="eyebrow">OMNIFAI Blogs</span>
-
-    
+    <app-search (searchChange)="searchText = $event"></app-search>
   </header>
 
-  <!-- Blog Articles -->
-  <div class="blog-grid">
-
-    <article class="blog-card" *ngFor="let blog of blogs">
-
-      <!-- Title cover replaces repeated dashboard screenshots -->
+  <div class="blog-grid" *ngIf="filteredBlogs.length > 0">
+    <article class="blog-card" *ngFor="let blog of filteredBlogs">
       <div class="blog-cover">
         <h2>{{ blog.title }}</h2>
       </div>
 
-      <!-- Blog Content -->
       <div class="blog-content">
+        <span class="category">{{ blog.category }}</span>
+        <p class="blog-excerpt">{{ blog.excerpt }}</p>
 
-        <span class="category">
-          {{ blog.category }}
-        </span>
-
-        <p class="blog-excerpt">
-          {{ blog.excerpt }}
-        </p>
-
-        <!-- Blog Footer -->
         <div class="blog-footer">
-          <span class="read-time">
-            {{ blog.readTime }}
-          </span>
-
+          <span class="read-time">{{ blog.readTime }}</span>
           <a
             class="read-more"
             [routerLink]="['/blog', blog.slug]"
-            [attr.aria-label]="'Read more about ' + blog.title"
-          >
+            [attr.aria-label]="'Read more about ' + blog.title">
             Read Article
             <span aria-hidden="true">→</span>
           </a>
         </div>
-
       </div>
     </article>
-
   </div>
 
-  <!-- Empty State -->
-  <div class="empty-state" *ngIf="!blogs ">
-    <h2>No articles available yet</h2>
-    <p>Check back soon for new guides and updates from Omnifai.</p>
+  <div class="empty-state" *ngIf="filteredBlogs.length === 0">
+    <h2>No matching articles</h2>
+    <p>Try another search term.</p>
   </div>
-
 </section>
-

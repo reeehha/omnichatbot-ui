@@ -1,0 +1,21 @@
+<div class="search-container">
+  <span class="search-icon">⌕</span>
+
+  <input
+    type="text"
+    [(ngModel)]="searchText"
+    (ngModelChange)="onSearch()"
+    placeholder="Search ."
+    aria-label="Search blog articles"
+  />
+
+  <button
+    *ngIf="searchText"
+    type="button"
+    class="clear-btn"
+    (click)="clearSearch()"
+    aria-label="Clear search"
+  >
+    ×
+  </button>
+</div>
