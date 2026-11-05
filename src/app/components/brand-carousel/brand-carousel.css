@@ -1,0 +1,102 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.brand-carousel {
+  --brand-gap: clamp(2.5rem, 5vw, 4.5rem);
+  overflow: hidden;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+}
+
+.brand-label {
+  margin: 0 0 0.6rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.brand-track {
+  display: flex;
+  width: max-content;
+  animation: brandScroll 30s linear infinite;
+  will-change: transform;
+}
+
+.brand-carousel:hover .brand-track {
+  animation-play-state: paused;
+}
+
+/* min-width keeps the loop gap-free on wide screens or with only a few logos. */
+.brand-group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--brand-gap);
+  min-width: 100vw;
+  padding: 0 calc(var(--brand-gap) / 2);
+  margin: 0;
+  list-style: none;
+}
+
+.brand-item {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  height: 84px;
+}
+
+.brand-item img {
+  display: block;
+  max-width: 240px;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 100%;
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #9ca3af;
+}
+
+@keyframes brandScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width: 640px) {
+  .brand-label {
+    font-size: 0.9rem;
+  }
+
+  .brand-item {
+    height: 60px;
+  }
+
+  .brand-item img {
+    max-width: 170px;
+  }
+
+  .brand-placeholder {
+    width: 100px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-track {
+    animation: none;
+  }
+}

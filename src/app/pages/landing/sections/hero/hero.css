@@ -20,6 +20,8 @@ section {
 
 .hero-section {
   position: relative;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   background: #ffffff;
   color: #000;
@@ -28,7 +30,7 @@ section {
 
 /* ===== Hero Section Content ===== */
 .section__content {
-  min-height: 100vh;
+  flex: 1 0 auto;
   display: flex;
   flex-direction: row;
   align-items: center;

@@ -1,0 +1,19 @@
+<div class="brand-carousel">
+  <!-- <p class="brand-label">Trusted by businesses all around the world</p> -->
+  <div class="brand-track">
+    <!-- The list is rendered twice so the -50% loop restarts without a visible jump. -->
+    @for (copy of [0, 1]; track copy) {
+      <ul class="brand-group" [attr.aria-hidden]="copy === 1 ? 'true' : null">
+        @for (brand of brands; track brand.name) {
+          <li class="brand-item">
+            @if (brand.logo) {
+              <img [src]="brand.logo" [alt]="brand.name" loading="lazy" />
+            } @else {
+              <span class="brand-placeholder">{{ brand.name }}</span>
+            }
+          </li>
+        }
+      </ul>
+    }
+  </div>
+</div>

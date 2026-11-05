@@ -2,10 +2,11 @@ import { Component, AfterViewInit, Renderer2, CUSTOM_ELEMENTS_SCHEMA } from '@an
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { BrandCarousel } from '../../../../components/brand-carousel/brand-carousel';
 
 @Component({
   selector: 'app-hero',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, BrandCarousel],
   templateUrl: './hero.html',
   styleUrls: ['./hero.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
