@@ -11,7 +11,7 @@
 .blog-page {
   width: min(1200px, calc(100% - 48px));
   margin: 0 auto;
-  padding: 64px 0 90px;
+  padding: 7.5rem 0 90px;
 }
 
 /* Blog heading */
@@ -189,7 +189,7 @@
   }
 
   .blog-page {
-    padding-top: 52px;
+    padding-top: 7.5rem;
   }
 }
 
@@ -197,7 +197,7 @@
 @media (max-width: 640px) {
   .blog-page {
     width: calc(100% - 32px);
-    padding: 38px 0 60px;
+    padding: 5.75rem 0 60px;
   }
 
   .blog-header {

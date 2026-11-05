@@ -10,7 +10,7 @@
 .blog-detail-page {
   width: min(1120px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 35px 0 80px;
+  padding: 7.5rem 0 80px;
 }
 
 /* Back to blog link */
@@ -288,7 +288,7 @@
 @media (max-width: 600px) {
   .blog-detail-page {
     width: calc(100% - 28px);
-    padding: 24px 0 50px;
+    padding: 5.75rem 0 50px;
   }
 
   .back-link {

@@ -14,16 +14,15 @@ export const routes: Routes = [
     path: '',
     component: LandingLayout,
     children: [
-      { path: '', pathMatch: 'full', component: Landing }
+      { path: '', pathMatch: 'full', component: Landing },
+      { path: 'pricing', component: Pricing },
+      { path: 'blog', component: Blog },
+      { path: 'blog/:slug', component: BlogDetail },
     ]
   },
   {
     path: 'features',
     component: FeaturesPage,
-  },
-  {
-    path: 'pricing',
-    component: Pricing,
   },
   {
     path: 'signup',
@@ -32,13 +31,5 @@ export const routes: Routes = [
   {
     path: 'signup/success',
     component: SignupSuccess,
-  },
-  {
-    path: 'blog',
-    component: Blog,
-  },
-  {
-    path: 'blog/:slug',
-    component: BlogDetail,
   },
 ];
