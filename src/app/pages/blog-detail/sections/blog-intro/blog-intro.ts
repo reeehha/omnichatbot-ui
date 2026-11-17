@@ -22,20 +22,34 @@ import { Component, Input } from '@angular/core';
   color: inherit;
 }
 
-.article-intro h2 {
-  margin: 0 0 18px;
-  color: #111827;
-  font-size: 26px;
-  font-weight: 700;
-  line-height: 1.35;
-}
+    .article-intro-card {
+      padding: 0;
+    }
 
-.article-intro p {
-  margin: 0 0 16px;
-  color: #6b7280;
-  font-size: 15px;
-  line-height: 1.9;
-}
+    .article-intro-card h2 {
+      margin: 0 0 18px;
+      color: #111827;
+      font-size: clamp(23px, 3vw, 30px);
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .article-intro-card p {
+      margin: 0 0 16px;
+      color: #6b7280;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .article-intro-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 600px) {
+      .article-intro-card {
+        padding: 0;
+      }
+    }
   `]
 })
 export class BlogIntroComponent {

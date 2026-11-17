@@ -30,13 +30,25 @@
   [paragraphs]="article.intro">
 </app-blog-intro>
 
+      @if (article.sections.length > 5) {
+        <nav class="article-toc" aria-label="Table of contents">
+          <h2>In this article</h2>
+          <ol>
+            @for (section of article.sections; track $index) {
+              <li><a [href]="'#article-section-' + $index">{{ section.heading }}</a></li>
+            }
+          </ol>
+        </nav>
+      }
+
       <!-- Article Sections -->
-      @for (section of article.sections; track section.stepNumber) {
+      @for (section of article.sections; track $index) {
 
         <!-- Text-only section when layout is text -->
         @if (!section.image) {
 
          <app-blog-text-section
+  [attr.id]="'article-section-' + $index"
   [stepNumber]="section.stepNumber"
   [heading]="section.heading"
   [paragraphs]="section.paragraphs"
@@ -47,6 +59,7 @@
 
           <!-- Section with image -->
           <app-blog-step-with-image
+            [attr.id]="'article-section-' + $index"
             [stepNumber]="section.stepNumber"
             [heading]="section.heading"
             [paragraphs]="section.paragraphs"
@@ -78,7 +91,8 @@
       <!-- Conclusion -->
      <app-blog-conclusion
   [title]="article.conclusionTitle"
-  [paragraphs]="article.conclusion">
+  [paragraphs]="article.conclusion"
+  [inlineLink]="conclusionInlineLink">
 </app-blog-conclusion>
     } @else {
 

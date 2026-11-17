@@ -7,6 +7,10 @@ export interface TextSectionContent {
   heading: string;
   paragraphs?: string[];
   bullets?: string[];
+  table?: {
+    headers: string[];
+    rows: string[][];
+  };
 }
 
 @Component({
@@ -17,7 +21,9 @@ export interface TextSectionContent {
     <section class="article-section text-only">
 
       <div class="section-text">
-        <span class="step-number">{{ stepNumber }}</span>
+        @if (stepNumber) {
+          <span class="step-number">{{ stepNumber }}</span>
+        }
 
         <h2>{{ heading }}</h2>
 
@@ -26,7 +32,7 @@ export interface TextSectionContent {
         </ng-container>
 
         <ng-container *ngFor="let item of content">
-          <h3>{{ item.heading }}</h3>
+          <h3 *ngIf="item.heading">{{ item.heading }}</h3>
 
           <ul *ngIf="item.bullets?.length">
             <li *ngFor="let bullet of item.bullets">
@@ -37,6 +43,21 @@ export interface TextSectionContent {
           <p *ngFor="let paragraph of item.paragraphs">
             {{ paragraph }}
           </p>
+
+          <div class="comparison-table-wrap" *ngIf="item.table">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th *ngFor="let header of item.table.headers" scope="col">{{ header }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let row of item.table.rows">
+                  <td *ngFor="let cell of row">{{ cell }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </ng-container>
 
         <app-blog-tips
@@ -54,20 +75,17 @@ export interface TextSectionContent {
     }
 
     .article-section {
-      padding: 32px;
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 22px;
-      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.045);
-      transition: box-shadow 0.25s ease;
-    }
-
-    .article-section:hover {
-      box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+      padding: 0;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
     }
 
     .section-text {
       min-width: 0;
+      width: 100%;
+      margin: 0;
     }
 
     .step-number {
@@ -120,10 +138,53 @@ export interface TextSectionContent {
       color: #0078ff;
     }
 
+    .comparison-table-wrap {
+      max-width: 100%;
+      margin: 18px 0 24px;
+      overflow-x: auto;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      background: #ffffff;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .comparison-table {
+      width: 100%;
+      min-width: 560px;
+      border-collapse: collapse;
+      color: #475569;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .comparison-table th {
+      background: #eff6ff;
+      color: #1e3a8a;
+      font-weight: 700;
+    }
+
+    .comparison-table td:first-child {
+      color: #1f2937;
+      font-weight: 600;
+    }
+
+    .comparison-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
     @media (max-width: 768px) {
       .article-section {
-        padding: 22px;
+        padding: 0;
       }
+
     }
   `]
 })

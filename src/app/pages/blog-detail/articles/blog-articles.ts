@@ -1,31 +1,29 @@
-import { manageBookingArticle} from '../articles/manage-booking-article';
-import { contactManagementArticle } from './contact-management';
-import { conversationManagementArticle } from './conversation-management';
-import { serviceManagementArticle } from './service-management';
-import { crmWebhookArticle } from './crm-webhook-article';
-import { inventoryManagementArticle } from './inventory-management';
-import { humanHandoffArticle } from './human-handoff';
-import { customTemplatesArticle } from './custom-templates';
-import { teamManagementArticle } from './team-management';
-import { shopifyIntegrationArticle } from './shopify-integration';
-import { aiChatbotIntegrationArticle } from './ai-chatbot-integration';
-import { flowBuilderArticle } from './flow-builder';
-import { mcpConnectorArticle } from './mcp-connector';
+
+
+import { whatsappAutomationArticle } from './whatsapp-automation';
+import { whatsappBusinessApiUaeArticle } from './whatsapp-business-api-uae';
+import { whatsappBroadcastMessagingUaeArticle } from './whatsapp-broadcast-messaging-uae';
+import { realEstateWhatsAppMarketingUaeArticle } from './real-estate-whatsapp-marketing-uae';
+import { omnifaiBusinessAutomationUaeArticle } from './omnifai-business-automation-uae';
+import { whatsappAiAgentUaeArticle } from './whatsapp-ai-agent-uae';
+import { whatsappBusinessAccountSafetyUaeArticle } from './whatsapp-business-account-safety-uae';
+import { whatsappFoodDeliveryUaeArticle } from './whatsapp-food-delivery-uae';
+import { whatsappCoexistenceUaeArticle } from './whatsapp-coexistence-uae';
+import { whatsappMarketingMistakesArticle } from './whatsapp-marketing-mistakes';
 
 
 export const blogArticles = [
-  manageBookingArticle,
-  contactManagementArticle,
-  serviceManagementArticle,
-  conversationManagementArticle,
-  crmWebhookArticle,
-  inventoryManagementArticle,
-  humanHandoffArticle,
-  customTemplatesArticle,
-  teamManagementArticle,
-  shopifyIntegrationArticle,
-  aiChatbotIntegrationArticle,
-  mcpConnectorArticle,
-  flowBuilderArticle
+  omnifaiBusinessAutomationUaeArticle,
+  whatsappMarketingMistakesArticle,
+  whatsappCoexistenceUaeArticle,
+  whatsappFoodDeliveryUaeArticle,
+  whatsappBusinessAccountSafetyUaeArticle,
+  whatsappAiAgentUaeArticle,
+  realEstateWhatsAppMarketingUaeArticle,
+  whatsappBroadcastMessagingUaeArticle,
+  whatsappBusinessApiUaeArticle,
+  whatsappAutomationArticle,
+  
+  
 
 ];

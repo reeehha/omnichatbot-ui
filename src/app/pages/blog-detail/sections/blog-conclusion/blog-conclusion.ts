@@ -3,6 +3,13 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
+export interface ConclusionInlineLink {
+  prefix: string;
+  text: string;
+  suffix: string;
+  url: string;
+}
+
 @Component({
   selector: 'app-blog-conclusion',
   standalone: true,
@@ -14,6 +21,12 @@ import { RouterLink } from '@angular/router';
 
       <p *ngFor="let paragraph of paragraphs">
         {{ paragraph }}
+      </p>
+
+      <p class="conclusion-link-line" *ngIf="inlineLink">
+        {{ inlineLink.prefix }}
+        <a [href]="inlineLink.url" target="_blank" rel="noopener noreferrer">{{ inlineLink.text }}</a>
+        {{ inlineLink.suffix }}
       </p>
 
       <a routerLink="/blog" class="back-to-blogs">
@@ -28,16 +41,12 @@ import { RouterLink } from '@angular/router';
     }
 
     .article-conclusion {
-      padding: 45px 35px;
-      border: 1px solid #e5e7eb;
+      padding: 42px 34px;
+      border: 1px solid #e9d5ff;
       border-radius: 22px;
-      background: #f8fafc;
+      background: linear-gradient(145deg, #faf5ff, #f5f3ff 72%, #ffffff);
+      box-shadow: 0 12px 34px rgba(109, 40, 217, 0.08);
       text-align: center;
-      transition: box-shadow 0.25s ease;
-    }
-
-    .article-conclusion:hover {
-      box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
     }
 
     .section-label {
@@ -53,8 +62,8 @@ import { RouterLink } from '@angular/router';
     }
 
     .article-conclusion h2 {
-      margin: 20px 0 18px;
-      color: #111827;
+      margin: 0 0 18px;
+      color: #5b21b6;
       font-size: clamp(23px, 3vw, 30px);
       font-weight: 700;
       line-height: 1.35;
@@ -64,7 +73,7 @@ import { RouterLink } from '@angular/router';
     .article-conclusion p {
       max-width: 720px;
       margin: 0 auto 20px;
-      color: #6b7280;
+      color: #5b556b;
       font-size: 15px;
       line-height: 1.9;
     }
@@ -73,24 +82,32 @@ import { RouterLink } from '@angular/router';
       margin-bottom: 25px;
     }
 
+    .conclusion-link-line a {
+      color: #6d28d9;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
     .back-to-blogs {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 13px 22px;
-      border-radius: 9px;
+      min-height: 34px;
+      padding: 0.55rem 0.8rem;
+      border: 0;
+      border-radius: 999px;
       background: linear-gradient(135deg, #2563eb, #7c3aed);
       color: #ffffff;
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 0.88rem;
+      font-weight: 800;
       text-decoration: none;
-      transition: background 0.2s ease, transform 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .back-to-blogs:hover {
-      background: #005fd4;
-      transform: translateY(-2px);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.18);
     }
 
     @media (max-width: 600px) {
@@ -116,4 +133,5 @@ import { RouterLink } from '@angular/router';
 export class BlogConclusionComponent {
   @Input() title = 'Conclusion';
   @Input() paragraphs: string[] = [];
+  @Input() inlineLink?: ConclusionInlineLink;
 }

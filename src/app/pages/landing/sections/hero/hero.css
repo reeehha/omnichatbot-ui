@@ -74,8 +74,8 @@ section {
   color: #1f2937;
 }
 
-.hero-text h1 {
-  font-size: clamp(2.5rem, 4vw + 1rem, 5rem);
+.hero-text h2 {
+  font-size: clamp(2.5rem, 4vw + 1rem, 3rem);
   font-weight: 700;
   line-height: 1.2;
 }

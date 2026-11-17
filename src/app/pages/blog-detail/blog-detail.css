@@ -41,13 +41,22 @@
 .section-label {
   display: inline-block;
   padding: 7px 14px;
-  border: 1px solid #dbeafe;
   border-radius: 30px;
-  background: #eff6ff;
-  color: #0078ff;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 1px;
+}
+
+.article-category {
+  border: 1px solid #dbeafe;
+  background: #eff6ff;
+  color: #0078ff;
+}
+
+.section-label {
+  border: 1px solid #dbeafe;
+  background: #eff6ff;
+  color: #0078ff;
 }
 
 .article-header h1 {
@@ -86,6 +95,66 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+}
+
+.article-toc {
+  position: relative;
+  overflow: hidden;
+  padding: 28px 32px;
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 243, 252, 0.92)),
+    radial-gradient(circle at top left, rgba(124, 58, 237, 0.15), transparent 34%);
+  box-shadow:
+    0 18px 42px rgba(15, 23, 42, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.article-toc::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 7px;
+  background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.75), transparent);
+  pointer-events: none;
+}
+
+.article-toc h2 {
+  margin: 0 0 18px;
+  color: #5b21b6;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.article-toc ol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 28px;
+  margin: 0;
+  padding-left: 22px;
+}
+
+.article-toc li {
+  padding-left: 3px;
+  color: #2563eb;
+  line-height: 1.6;
+}
+
+.article-toc a {
+  color: #334155;
+  text-decoration: none;
+}
+
+.article-toc a:hover {
+  color: #2563eb;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.article-content > app-blog-text-section,
+.article-content > app-blog-step-with-image {
+  scroll-margin-top: 110px;
 }
 
 .related-article {
@@ -270,6 +339,10 @@
 
 /* Tablet */
 @media (max-width: 800px) {
+  .article-toc ol {
+    grid-template-columns: 1fr;
+  }
+
   .article-section {
     gap: 28px;
     padding: 24px;
@@ -286,6 +359,11 @@
 
 /* Mobile */
 @media (max-width: 600px) {
+  .article-toc {
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+
   .blog-detail-page {
     width: calc(100% - 28px);
     padding: 5.75rem 0 50px;

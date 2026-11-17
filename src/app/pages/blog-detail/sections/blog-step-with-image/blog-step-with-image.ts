@@ -5,13 +5,27 @@ export interface BlogStepContent {
   heading: string;
   paragraphs?: string[];
   bullets?: string[];
+  table?: {
+    headers: string[];
+    rows: string[][];
+  };
 }
 
 @Component({
   selector: 'app-blog-step-with-image',
   standalone: true,
   template: `
-    <section class="article-section" [class.reverse]="reverse">
+    <section class="article-section">
+      <div class="section-image">
+        <div class="image-frame">
+          <img [src]="image" [alt]="imageAlt" />
+        </div>
+
+        @if (caption) {
+          <p class="image-caption">{{ caption }}</p>
+        }
+      </div>
+
       <div class="section-text">
         @if (stepNumber) {
           <span class="step-number">{{ stepNumber }}</span>
@@ -24,7 +38,9 @@ export interface BlogStepContent {
         }
 
         @for (item of content; track $index) {
-          <h3>{{ item.heading }}</h3>
+          @if (item.heading) {
+            <h3>{{ item.heading }}</h3>
+          }
 
           @if (item.bullets?.length) {
             <ul>
@@ -37,16 +53,29 @@ export interface BlogStepContent {
           @for (paragraph of item.paragraphs ?? []; track $index) {
             <p>{{ paragraph }}</p>
           }
-        }
-      </div>
 
-      <div class="section-image">
-        <div class="image-frame">
-          <img [src]="image" [alt]="imageAlt" />
-        </div>
-
-        @if (caption) {
-          <p class="image-caption">{{ caption }}</p>
+          @if (item.table; as table) {
+            <div class="comparison-table-wrap">
+              <table class="comparison-table">
+                <thead>
+                  <tr>
+                    @for (header of table.headers; track $index) {
+                      <th scope="col">{{ header }}</th>
+                    }
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (row of table.rows; track $index) {
+                    <tr>
+                      @for (cell of row; track $index) {
+                        <td>{{ cell }}</td>
+                      }
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          }
         }
       </div>
     </section>
@@ -58,27 +87,20 @@ export interface BlogStepContent {
     }
 
     .article-section {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      align-items: center;
-      gap: 45px;
-      padding: 32px;
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 22px;
-      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.045);
-    }
-
-    .article-section.reverse .section-text {
-      order: 2;
-    }
-
-    .article-section.reverse .section-image {
-      order: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
     }
 
     .section-text {
       min-width: 0;
+      width: 100%;
+      margin: 0;
     }
 
     .step-number {
@@ -129,20 +151,64 @@ export interface BlogStepContent {
       color: #0078ff;
     }
 
+    .comparison-table-wrap {
+      max-width: 100%;
+      margin: 18px 0 24px;
+      overflow-x: auto;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      background: #ffffff;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .comparison-table {
+      width: 100%;
+      min-width: 560px;
+      border-collapse: collapse;
+      color: #475569;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .comparison-table th {
+      background: #eff6ff;
+      color: #1e3a8a;
+      font-weight: 700;
+    }
+
+    .comparison-table td:first-child {
+      color: #1f2937;
+      font-weight: 600;
+    }
+
+    .comparison-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
     .image-frame {
-      overflow: hidden;
-      aspect-ratio: 4 / 3;
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
-      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      overflow: visible;
+      background: transparent;
     }
 
     .image-frame img {
       display: block;
-      width: 100%;
-      height: 100%;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 520px;
       object-fit: contain;
-      background: #f8fafc;
+      background: transparent;
+      border-radius: 12px;
       transition: transform 0.3s ease;
     }
 
@@ -162,23 +228,11 @@ export interface BlogStepContent {
 
     @media (max-width: 800px) {
       .article-section {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        padding: 24px;
-      }
-
-      .article-section.reverse .section-text,
-      .article-section.reverse .section-image {
-        order: initial;
+        gap: 20px;
       }
     }
 
     @media (max-width: 600px) {
-      .article-section {
-        padding: 18px;
-        border-radius: 16px;
-      }
-
       .section-text h2 {
         font-size: 22px;
       }
