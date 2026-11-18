@@ -49,6 +49,14 @@ export class BlogDetail {
     return Array.isArray(content) ? content as TextSectionContent[] : [];
   }
 
+  scrollToSection(event: MouseEvent, index: number): void {
+    event.preventDefault();
+    document.getElementById(`article-section-${index}`)?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+
   constructor(
     private route: ActivatedRoute,
     private titleService: Title,

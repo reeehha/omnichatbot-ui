@@ -34,12 +34,24 @@ export interface BlogStepContent {
         <h2>{{ heading }}</h2>
 
         @for (paragraph of paragraphs; track $index) {
-          <p>{{ paragraph }}</p>
+          <p [class.example-callout]="isExampleParagraph(paragraph)" [class.example-conversation]="isConversationParagraph(paragraph)">
+            @if (isExampleParagraph(paragraph)) { <span class="example-label">Example</span> }
+            @if (isConversationParagraph(paragraph)) { <span class="example-speaker">{{ getConversationSpeaker(paragraph) }}</span> }
+            {{ isExampleParagraph(paragraph) ? getExampleBody(paragraph) : isConversationParagraph(paragraph) ? getConversationBody(paragraph) : paragraph }}
+          </p>
         }
 
         @for (item of content; track $index) {
           @if (item.heading) {
-            <h3>{{ item.heading }}</h3>
+            <h3 [class.example-heading]="isExampleParagraph(item.heading)">{{ item.heading }}</h3>
+          }
+
+          @for (paragraph of item.paragraphs ?? []; track $index) {
+            <p [class.example-callout]="isExampleParagraph(paragraph)" [class.example-conversation]="isConversationParagraph(paragraph)">
+              @if (isExampleParagraph(paragraph)) { <span class="example-label">Example</span> }
+              @if (isConversationParagraph(paragraph)) { <span class="example-speaker">{{ getConversationSpeaker(paragraph) }}</span> }
+              {{ isExampleParagraph(paragraph) ? getExampleBody(paragraph) : isConversationParagraph(paragraph) ? getConversationBody(paragraph) : paragraph }}
+            </p>
           }
 
           @if (item.bullets?.length) {
@@ -48,10 +60,6 @@ export interface BlogStepContent {
                 <li>{{ bullet }}</li>
               }
             </ul>
-          }
-
-          @for (paragraph of item.paragraphs ?? []; track $index) {
-            <p>{{ paragraph }}</p>
           }
 
           @if (item.table; as table) {
@@ -124,6 +132,45 @@ export interface BlogStepContent {
       color: #6b7280;
       font-size: 16px;
       line-height: 1.9;
+    }
+
+    .section-text p.example-callout {
+      margin: 18px 0 22px;
+      padding: 13px 17px;
+      border-left: 3px solid #7c3aed;
+      border-radius: 0 10px 10px 0;
+      background: #faf5ff;
+      color: #4b5563;
+    }
+
+    .example-label {
+      display: block;
+      margin-bottom: 4px;
+      color: #6d28d9;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .section-text p.example-conversation {
+      margin: 10px 0;
+      padding: 7px 0 7px 14px;
+      border-left: 2px solid #c4b5fd;
+      color: #4b5563;
+    }
+
+    .example-speaker {
+      margin-right: 5px;
+      color: #6d28d9;
+      font-weight: 700;
+    }
+
+    .section-text h3.example-heading {
+      padding-left: 12px;
+      border-left: 3px solid #7c3aed;
+      color: #6d28d9;
     }
 
     .section-text h3 {
@@ -248,4 +295,25 @@ export class BlogStepWithImageComponent {
   @Input() imageAlt = '';
   @Input() caption = '';
   @Input() reverse = false;
+
+  isExampleParagraph(text: string): boolean {
+    return /^(?:for\s+)?examples?(?:\s+include)?\s*[:,]/i.test(text.trim());
+  }
+
+  getExampleBody(text: string): string {
+    return text.trim().replace(/^(?:for\s+)?examples?(?:\s+include)?\s*[:,]\s*/i, '').trim();
+  }
+
+  isConversationParagraph(text: string): boolean {
+    return /^(?:customer|whatsapp ai agent|ai agent|assistant|bot):/i.test(text.trim());
+  }
+
+  getConversationSpeaker(text: string): string {
+    return text.trim().slice(0, text.indexOf(':') + 1);
+  }
+
+  getConversationBody(text: string): string {
+    return text.trim().slice(text.indexOf(':') + 1).trim();
+  }
+
 }

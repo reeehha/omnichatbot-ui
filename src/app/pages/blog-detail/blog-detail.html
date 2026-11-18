@@ -35,7 +35,7 @@
           <h2>In this article</h2>
           <ol>
             @for (section of article.sections; track $index) {
-              <li><a [href]="'#article-section-' + $index">{{ section.heading }}</a></li>
+              <li><a [href]="'#article-section-' + $index" (click)="scrollToSection($event, $index)">{{ section.heading }}</a></li>
             }
           </ol>
         </nav>

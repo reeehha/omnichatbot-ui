@@ -28,7 +28,7 @@
                                              "heading":  "Key points",
                                              "paragraphs":  [
                                                                 "Instead of completely moving away from the WhatsApp Business App, businesses can connect the existing account to a compatible platform through the supported onboarding process.",
-                                                                "For example, imagine a Dubai-based real estate agency that already receives property enquiries through its WhatsApp Business number.",
+                                                                "For example, Imagine a Dubai-based real estate agency that already receives property enquiries through its WhatsApp Business number.",
                                                                 "After connecting through coexistence, its team can continue handling individual conversations from the mobile app while using an integrated platform to automate property enquiries, distribute conversations among agents and send approved message templates.",
                                                                 "One business number. Two connected ways to communicate."
                                                             ],
@@ -49,11 +49,19 @@
                          "paragraphs":  [
                                             "WhatsApp Coexistence connects an eligible WhatsApp Business App account with the WhatsApp Business Platform through Meta\u0027s supported onboarding process.",
                                             "Once the connection is successfully completed:",
-                                            "1. The business keeps using its existing WhatsApp Business number. 2. The number is connected to the WhatsApp Business Platform through an eligible integration. 3. Supported one-to-one conversations and contacts can synchronise between the app and platform. 4. Team members can continue using the mobile app for individual conversations. 5. Connected software can handle supported API messaging, automation and business workflows.",
                                             "The exact experience depends on Meta\u0027s eligibility requirements, the integration provider and the features supported by the connected platform."
                                         ],
                          "content":  [
-
+                                         {
+                                             "heading":  "",
+                                             "bullets":  [
+                                                 "The business keeps using its existing WhatsApp Business number.",
+                                                 "The number is connected to the WhatsApp Business Platform through an eligible integration.",
+                                                 "Supported one-to-one conversations and contacts can synchronise between the app and platform.",
+                                                 "Team members can continue using the mobile app for individual conversations.",
+                                                 "Connected software can handle supported API messaging, automation and business workflows."
+                                             ]
+                                         }
                                      ],
                          "image":  "",
                          "imageAlt":  "",
@@ -121,7 +129,7 @@
                                              "heading":  "Improve Customer Communication",
                                              "paragraphs":  [
                                                                 "Automation helps businesses provide timely updates and consistent responses.",
-                                                                "For example, an online store can automate order confirmations and delivery notifications, while a service provider can send booking reminders and appointment updates using approved message templates."
+                                                                "For example, An online store can automate order confirmations and delivery notifications, while a service provider can send booking reminders and appointment updates using approved message templates."
                                                             ],
                                              "bullets":  [
 

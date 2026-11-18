@@ -26,7 +26,7 @@
                                              "heading":  "Sending messages without customer permission",
                                              "paragraphs":  [
                                                                 "Sending promotional messages to people who have not agreed to receive them can create a negative customer experience.",
-                                                                "For example, a real estate agency collecting phone numbers from different sources and sending property advertisements to everyone may receive complaints from recipients who never requested those updates.",
+                                                                "For example, A real estate agency collecting phone numbers from different sources and sending property advertisements to everyone may receive complaints from recipients who never requested those updates.",
                                                                 "What businesses should do:"
                                                             ],
                                              "bullets":  [
@@ -111,7 +111,7 @@
                                              "heading":  "Sending messages using incorrect templates",
                                              "paragraphs":  [
                                                                 "Businesses using the WhatsApp Business Platform must follow the message-template requirements.",
-                                                                "For example, business-initiated conversations outside the 24-hour customer service window generally require approved message templates. Using templates for purposes other than their approved category or sending non-compliant content can create problems.",
+                                                                "For example, Business-initiated conversations outside the 24-hour customer service window generally require approved message templates. Using templates for purposes other than their approved category or sending non-compliant content can create problems.",
                                                                 "What businesses should do:"
                                                             ],
                                              "bullets":  [

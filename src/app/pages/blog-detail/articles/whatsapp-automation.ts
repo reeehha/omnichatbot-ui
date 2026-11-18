@@ -55,7 +55,7 @@ export const whatsappAutomationArticle = {
             'Review delivery, read, and failed message statuses when campaign tracking is enabled.'
           ],
           paragraphs: [
-            'For example, a supermarket in Dubai can share weekend offers with selected customer groups, while a restaurant can announce a new menu or promotion. Give each campaign a name to keep its activity organised.'
+            'For example, A supermarket in Dubai can share weekend offers with selected customer groups, while a restaurant can announce a new menu or promotion. Give each campaign a name to keep its activity organised.'
           ]
         }
       ]
@@ -136,14 +136,16 @@ export const whatsappAutomationArticle = {
       ],
       content: [
         {
-          heading: 'For example, a salon booking enquiry flow could',
+          heading: 'For example, a salon booking flow could guide a customer to:',
           bullets: [
-            'Welcome the customer.',
-            'Ask which service they are interested in.',
-            'Display available service options.',
-            'Collect customer details.',
-            'Send the enquiry to the appropriate team.'
-          ],
+            'Greet the customer and ask which service they need.',
+            'Show the available services and options.',
+            'Collect the customer’s contact details and booking preferences.',
+            'Pass the request to the right team member.'
+          ]
+        },
+        {
+          heading: '',
           paragraphs: [
             'Restaurants, retailers, and service providers can create similar flows for their own processes. A structured workflow helps provide a consistent experience without requiring an employee to handle every step manually.'
           ]

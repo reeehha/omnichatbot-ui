@@ -17,7 +17,7 @@ export const whatsappBusinessApiUaeArticle = {
       heading: 'What Is WhatsApp Business API?',
       paragraphs: [
         'WhatsApp Business API, now commonly referred to as the WhatsApp Business Platform, is Meta’s business messaging solution for communicating with customers through connected software and applications. It is not a standalone phone app. Instead, it connects WhatsApp with a business platform so teams can receive messages, send permitted notifications, automate conversations, and integrate with other tools.',
-        'For example, a real estate company in Dubai can use a connected platform to welcome customers, ask about their preferred location and budget, collect enquiry details, share property information, assign conversations to sales agents, and send appointment updates. These activities are managed through the connected business software.'
+        'For example, A real estate company in Dubai can use a connected platform to welcome customers, ask about their preferred location and budget, collect enquiry details, share property information, assign conversations to sales agents, and send appointment updates. These activities are managed through the connected business software.'
       ],
       content: [
         {
@@ -105,7 +105,7 @@ export const whatsappBusinessApiUaeArticle = {
             'Follow-ups: organise permitted reminders and follow-up messages for enquiries.',
             'Multi-agent support: let several agents work through a shared inbox and distribute conversations.'
           ],
-          paragraphs: ['For example, a restaurant in Dubai can share its menu, collect booking preferences, and direct customers to the appropriate team. A retail business can send a new collection announcement to customers interested in that category.']
+          paragraphs: ['For example, A restaurant in Dubai can share its menu, collect booking preferences, and direct customers to the appropriate team. A retail business can send a new collection announcement to customers interested in that category.']
         }
       ]
     },

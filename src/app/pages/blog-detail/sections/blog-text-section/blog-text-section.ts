@@ -28,21 +28,29 @@ export interface TextSectionContent {
         <h2>{{ heading }}</h2>
 
         <ng-container *ngFor="let paragraph of paragraphs">
-          <p>{{ paragraph }}</p>
+          <p [class.example-callout]="isExampleParagraph(paragraph)" [class.example-conversation]="isConversationParagraph(paragraph)">
+            <span class="example-label" *ngIf="isExampleParagraph(paragraph)">Example</span>
+            <span class="example-speaker" *ngIf="isConversationParagraph(paragraph)">{{ getConversationSpeaker(paragraph) }}</span>
+            {{ isExampleParagraph(paragraph) ? getExampleBody(paragraph) : isConversationParagraph(paragraph) ? getConversationBody(paragraph) : paragraph }}
+          </p>
         </ng-container>
 
         <ng-container *ngFor="let item of content">
-          <h3 *ngIf="item.heading">{{ item.heading }}</h3>
+          <h3 *ngIf="item.heading" [class.example-heading]="isExampleParagraph(item.heading)">{{ item.heading }}</h3>
+
+          <p *ngFor="let paragraph of item.paragraphs"
+             [class.example-callout]="isExampleParagraph(paragraph)"
+             [class.example-conversation]="isConversationParagraph(paragraph)">
+            <span class="example-label" *ngIf="isExampleParagraph(paragraph)">Example</span>
+            <span class="example-speaker" *ngIf="isConversationParagraph(paragraph)">{{ getConversationSpeaker(paragraph) }}</span>
+            {{ isExampleParagraph(paragraph) ? getExampleBody(paragraph) : isConversationParagraph(paragraph) ? getConversationBody(paragraph) : paragraph }}
+          </p>
 
           <ul *ngIf="item.bullets?.length">
             <li *ngFor="let bullet of item.bullets">
               {{ bullet }}
             </li>
           </ul>
-
-          <p *ngFor="let paragraph of item.paragraphs">
-            {{ paragraph }}
-          </p>
 
           <div class="comparison-table-wrap" *ngIf="item.table">
             <table class="comparison-table">
@@ -121,6 +129,45 @@ export interface TextSectionContent {
       line-height: 1.9;
     }
 
+    .section-text p.example-callout {
+      margin: 18px 0 22px;
+      padding: 13px 17px;
+      border-left: 3px solid #7c3aed;
+      border-radius: 0 10px 10px 0;
+      background: #faf5ff;
+      color: #4b5563;
+    }
+
+    .example-label {
+      display: block;
+      margin-bottom: 4px;
+      color: #6d28d9;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .section-text p.example-conversation {
+      margin: 10px 0;
+      padding: 7px 0 7px 14px;
+      border-left: 2px solid #c4b5fd;
+      color: #4b5563;
+    }
+
+    .example-speaker {
+      margin-right: 5px;
+      color: #6d28d9;
+      font-weight: 700;
+    }
+
+    .section-text h3.example-heading {
+      padding-left: 12px;
+      border-left: 3px solid #7c3aed;
+      color: #6d28d9;
+    }
+
     .section-text ul {
       margin: 18px 0;
       padding-left: 22px;
@@ -194,4 +241,25 @@ export class BlogTextSectionComponent {
   @Input() paragraphs: string[] = [];
   @Input() content: TextSectionContent[] = [];
   @Input() tips: string[] = [];
+
+  isExampleParagraph(text: string): boolean {
+    return /^(?:for\s+)?examples?(?:\s+include)?\s*[:,]/i.test(text.trim());
+  }
+
+  getExampleBody(text: string): string {
+    return text.trim().replace(/^(?:for\s+)?examples?(?:\s+include)?\s*[:,]\s*/i, '').trim();
+  }
+
+  isConversationParagraph(text: string): boolean {
+    return /^(?:customer|whatsapp ai agent|ai agent|assistant|bot):/i.test(text.trim());
+  }
+
+  getConversationSpeaker(text: string): string {
+    return text.trim().slice(0, text.indexOf(':') + 1);
+  }
+
+  getConversationBody(text: string): string {
+    return text.trim().slice(text.indexOf(':') + 1).trim();
+  }
+
 }

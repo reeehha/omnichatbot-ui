@@ -23,7 +23,7 @@
                          "paragraphs":  [
                                             "One of the biggest mistakes in WhatsApp marketing is contacting people who have not agreed to receive messages from your business.",
                                             "Having someone\u0027s phone number does not automatically mean they want to receive promotional messages on WhatsApp.",
-                                            "For example, a retail store may collect customer phone numbers during checkout and later send promotional campaigns without obtaining clear WhatsApp marketing permission.",
+                                            "For example, A retail store may collect customer phone numbers during checkout and later send promotional campaigns without obtaining clear WhatsApp marketing permission.",
                                             "This can lead to unwanted messages, customer blocks and complaints.",
                                             "How to avoid this mistake:"
                                         ],
@@ -54,7 +54,7 @@
                          "paragraphs":  [
                                             "Imagine receiving a promotional message from the same business every morning, afternoon and evening. Even if the offers are attractive, repeated notifications can quickly become frustrating.",
                                             "This is a common WhatsApp marketing mistake. Businesses sometimes focus on how many messages they can send instead of how relevant those messages are to their customers.",
-                                            "For example, a restaurant sending a lunch offer, dinner discount, weekend promotion and several reminders every day may overwhelm its audience.",
+                                            "For example, A restaurant sending a lunch offer, dinner discount, weekend promotion and several reminders every day may overwhelm its audience.",
                                             "How to avoid this mistake:"
                                         ],
                          "content":  [
@@ -84,7 +84,7 @@
                                             "WhatsApp marketing should not be limited to discounts, sales and promotional campaigns.",
                                             "Customers also use WhatsApp to ask questions, request product information, check order status and receive support.",
                                             "If every message from your business is a sales promotion, customers may gradually lose interest.",
-                                            "For example, an online clothing store can use WhatsApp to share:"
+                                            "For example, An online clothing store can use WhatsApp to share:"
                                         ],
                          "content":  [
                                          {
@@ -123,7 +123,7 @@
                                          {
                                              "heading":  "Key points",
                                              "paragraphs":  [
-                                                                "For example, a real estate company can create separate customer groups for property buyers, tenants and investors.",
+                                                                "For example, A real estate company can create separate customer groups for property buyers, tenants and investors.",
                                                                 "It can then send more relevant WhatsApp marketing campaigns to each group.",
                                                                 "Personalised communication helps businesses make their messages more meaningful to customers."
                                                             ],
@@ -197,7 +197,7 @@
                                             "As customer enquiries increase, responding to every message manually becomes difficult.",
                                             "A business may receive hundreds of questions about pricing, availability, bookings, delivery and product details. Handling all these conversations manually can slow down response times and increase the workload for employees.",
                                             "This is where WhatsApp automation becomes valuable.",
-                                            "For example, a salon can automate appointment enquiries, while a restaurant can use automated workflows to answer common questions about its menu and delivery services.",
+                                            "For example, A salon can automate appointment enquiries, while a restaurant can use automated workflows to answer common questions about its menu and delivery services.",
                                             "How to avoid this mistake:",
                                             "Introduce WhatsApp automation for repetitive tasks, such as:"
                                         ],
@@ -229,7 +229,7 @@
                          "paragraphs":  [
                                             "WhatsApp marketing is not just about sending messages. It is also about starting and maintaining conversations.",
                                             "Some businesses focus heavily on sending broadcast campaigns but fail to respond when customers reply.",
-                                            "For example, a real estate agency may send a property promotion to hundreds of potential customers. Several people may respond asking for prices or viewing appointments. If nobody follows up, those potential leads may lose interest.",
+                                            "For example, A real estate agency may send a property promotion to hundreds of potential customers. Several people may respond asking for prices or viewing appointments. If nobody follows up, those potential leads may lose interest.",
                                             "How to avoid this mistake:"
                                         ],
                          "content":  [
@@ -258,7 +258,7 @@
                          "heading":  "Not Managing Team Conversations Properly",
                          "paragraphs":  [
                                             "When multiple employees use the same business number, managing customer conversations can become confusing.",
-                                            "For example:"
+                                            
                                         ],
                          "content":  [
                                          {

@@ -25,7 +25,7 @@
                          "paragraphs":  [
                                             "A WhatsApp AI agent is an AI-powered system connected to a business\u0027s WhatsApp communication setup. It helps customers interact with a business through natural conversations.",
                                             "Unlike a basic automated reply that sends the same predefined response to every customer, an AI-powered agent can interpret questions in context and provide relevant answers based on the business information and capabilities available to it.",
-                                            "For example, imagine a customer messaging a restaurant:",
+                                            "For example, Imagine a customer messaging a restaurant:",
                                             "Customer: Hi, do you have vegetarian food options?",
                                             "WhatsApp AI Agent: Yes! We offer several vegetarian dishes. Would you like to see our vegetarian menu?",
                                             "Customer: Yes, please.",
@@ -48,14 +48,25 @@
                                             "Although the terms AI chatbot and AI agent are sometimes used interchangeably, they can describe different levels of functionality.",
                                             "A traditional rule-based chatbot follows predefined questions, buttons and responses. An AI-powered chatbot can understand natural language and respond using relevant business information.",
                                             "An AI agent can go further when it has the appropriate tools and permissions, helping coordinate multi-step tasks and business workflows.",
-                                            "Traditional rule-based chatbot — AI-powered chatbot or agent Follows predefined conversation paths — Understands natural language Usually depends on fixed responses — Can generate context-aware responses Handles predictable questions — Can handle different ways of asking questions Follows configured rules — Can support more flexible workflows Limited to configured actions — Can use connected tools when enabled and authorised",
                                             "For example:",
                                             "A traditional chatbot may ask a customer to select a booking option from a menu.",
                                             "An AI-powered agent may understand a message such as \"I need a table for three tomorrow evening\" and collect the required booking information through a natural conversation.",
                                             "The actual ability to confirm a booking or update a business system depends on the integrations and permissions configured."
                                         ],
                          "content":  [
-
+                                         {
+                                             "heading":  "At a glance",
+                                             "table":  {
+                                                 "headers":  [ "Traditional rule-based chatbot", "AI-powered chatbot or agent" ],
+                                                 "rows":  [
+                                                     [ "Follows predefined conversation paths", "Understands natural language" ],
+                                                     [ "Usually depends on fixed responses", "Can generate context-aware responses" ],
+                                                     [ "Handles predictable questions", "Can handle different ways of asking questions" ],
+                                                     [ "Follows configured rules", "Can support more flexible workflows" ],
+                                                     [ "Limited to configured actions", "Can use connected tools when enabled and authorised" ]
+                                                 ]
+                                             }
+                                         }
                                      ],
                          "image":  "",
                          "imageAlt":  "",
@@ -105,7 +116,7 @@
                                              "heading":  "Step 4: Automation Workflows Support the Process",
                                              "paragraphs":  [
                                                                 "The AI agent can work alongside configured business workflows.",
-                                                                "For example, the workflow may collect customer details, categorise the enquiry or route the conversation to a relevant team member."
+                                                                "For example, The workflow may collect customer details, categorise the enquiry or route the conversation to a relevant team member."
                                                             ],
                                              "bullets":  [
 

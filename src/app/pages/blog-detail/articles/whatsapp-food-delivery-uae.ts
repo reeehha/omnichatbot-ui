@@ -244,19 +244,19 @@
                                              "paragraphs":  [
                                                                 "Message Header: Explore Our Special Menu!",
                                                                 "Introduction: Delicious meals are waiting for you. Explore our latest food selections.",
-                                                                "Card 1 â€“ Classic Burger Combo",
+                                                                "Card 1 – Classic Burger Combo",
                                                                 "Image: Burger, fries and a drink.",
                                                                 "Description: Enjoy our classic burger meal.",
                                                                 "Button: Order Now",
-                                                                "Card 2 â€“ Family Pizza Combo",
+                                                                "Card 2 – Family Pizza Combo",
                                                                 "Image: Large pizza with sides.",
                                                                 "Description: Perfect for sharing with family and friends.",
                                                                 "Button: View Offer",
-                                                                "Card 3 â€“ Dessert Special",
+                                                                "Card 3 – Dessert Special",
                                                                 "Image: Chocolate cake and dessert selection.",
                                                                 "Description: Complete your meal with something sweet.",
                                                                 "Button: Explore Desserts",
-                                                                "Card 4 â€“ Weekend Special",
+                                                                "Card 4 – Weekend Special",
                                                                 "Image: Special restaurant meal package.",
                                                                 "Description: Enjoy our limited-time weekend deals.",
                                                                 "Button: Get Offer"
@@ -447,12 +447,25 @@
                                             "A customer might see a food promotion on Instagram or Facebook and want to know more before placing an order.",
                                             "Click-to-WhatsApp advertising allows customers to move directly from an advertisement into a WhatsApp conversation.",
                                             "For example:",
-                                            "1. A restaurant publishes an advertisement promoting its new meal combo. 2. A customer clicks the WhatsApp button. 3. The customer enters a conversation with the business. 4. An automated chatbot shares the menu and answers questions. 5. The customer proceeds with the ordering process.",
-                                            "This creates a direct communication channel between the business and potential customers.",
-                                            "With WhatsApp automation, businesses can also capture enquiries, organise customer information and ensure that incoming conversations receive attention."
                                         ],
                          "content":  [
-
+                                         {
+                                             "heading":  "",
+                                             "bullets":  [
+                                                 "A restaurant publishes an advertisement promoting its new meal combo.",
+                                                 "A customer clicks the WhatsApp button.",
+                                                 "The customer enters a conversation with the business.",
+                                                 "An automated chatbot shares the menu and answers questions.",
+                                                 "The customer proceeds with the ordering process."
+                                             ]
+                                         },
+                                         {
+                                             "heading":  "",
+                                             "paragraphs":  [
+                                                 "This creates a direct communication channel between the business and potential customers.",
+                                                 "With WhatsApp automation, businesses can also capture enquiries, organise customer information and ensure that incoming conversations receive attention."
+                                             ]
+                                         }
                                      ],
                          "image":  "",
                          "imageAlt":  "",
@@ -470,7 +483,7 @@
                                         ],
                          "content":  [
                                          {
-                                             "heading":  "Key points",
+                                             "heading":  "",
                                              "paragraphs":  [
                                                                 "Omnifai brings WhatsApp communication, chatbot automation, customer management and team collaboration into one platform.",
                                                                 "Depending on the business\u0027s existing systems and integration requirements, businesses can build workflows that connect customer conversations with their wider operations."
