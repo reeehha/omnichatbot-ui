@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
 
 interface Plan {
   name: string;
@@ -51,6 +52,16 @@ type CurrencyCode = 'AED' | 'OMR' | 'INR' | 'QAR';
   styleUrls: ['./pricing.css'],
 })
 export class Pricing implements OnInit {
+  constructor(titleService: Title, metaService: Meta) {
+    const title = 'WhatsApp Automation Pricing for UAE Businesses | OmnifAI';
+    const description = 'Compare WhatsApp automation plans for UAE businesses, with pricing for AI chatbots, team inboxes, campaigns, and customer workflows.';
+
+    titleService.setTitle(title);
+    metaService.updateTag({ name: 'description', content: description });
+    metaService.updateTag({ property: 'og:title', content: title }, "property='og:title'");
+    metaService.updateTag({ property: 'og:description', content: description }, "property='og:description'");
+  }
+
   readonly salesWhatsappUrl = 'https://wa.me/971522672743';
   readonly termsUrl = 'https://omnifai-fzco.com/terms-of-use';
   readonly pricingContextEndpoint = 'https://nhozrszypc.execute-api.us-east-1.amazonaws.com/default/api/pricing-context';
@@ -64,13 +75,11 @@ export class Pricing implements OnInit {
   billingCycle: BillingCycle = 'monthly';
 
   plans: Plan[] = [
+    
     {
-      name: 'Free',
+      name: 'Pro',
+      apiPlanId: 'pro',
       features: [
-        '0% Markup Fees',
-        '2 Team Members',
-        'Catalog Management',
-        '20 subscribers',
         'Checkout Assistance',
         'Service/appointment scheduling with Google Calendar',
         'Automated Follow Up Messages',
@@ -82,26 +91,9 @@ export class Pricing implements OnInit {
         'Messaging Template Management',
         'Zapier Integration',
         'Carousel Messages',
+        'Catalog Management',
         'Broadcast Messaging',
-        'Chat Enhcnement',
-        
-      ],
-      buttonText: 'Get Started',
-      accent: 'Free',
-      pricing: {
-        monthly: {
-          amount: 0,
-        },
-        annually: {
-          amount: 0,
-        },
-      },
-    },
-    {
-      name: 'Pro',
-      apiPlanId: 'pro',
-      features: [
-        'Everything in Free',
+        'Chat Enhancement',
         'Coexistance',
         'Blue Tick Verification Support',
         'MCP Connector',
@@ -110,6 +102,7 @@ export class Pricing implements OnInit {
         'Unlimited AI Agent',
         'Manager Monitoring',
         'Unlimited AI Message',
+        'Automatic Agent Assignment',
         'On-Call Support',
         '6000 subscribers',
       ],
