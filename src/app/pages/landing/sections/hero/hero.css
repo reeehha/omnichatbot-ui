@@ -54,9 +54,10 @@ section {
   gap: 0.65rem;
   width: fit-content;
   padding: 0.45rem 0.8rem;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid #111827;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.9);
+  background: #ffe84a;
+  box-shadow: 3px 3px 0 #111827;
 }
 
 .meta-icon {
@@ -71,7 +72,7 @@ section {
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #1f2937;
+  color: #111827;
 }
 
 .hero-text h1 {

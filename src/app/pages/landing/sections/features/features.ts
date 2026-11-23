@@ -27,6 +27,7 @@ export class Features {
         </svg>
       `,
       title: 'AI-powered WhatsApp chatbot',
+      link: 'https://www.whatsapp.com/meta-ai',
       desc: 'Capture leads, answer FAQs, and guide prospects with intelligent WhatsApp flows.',
       align: 'left',
       delay: 0,
@@ -44,6 +45,7 @@ export class Features {
         </svg>
       `,
       title: 'Automation that keeps moving',
+      link: 'https://blog.whatsapp.com/ ',
       desc: 'Handle replies, follow-ups, routing, and broadcasts without manual effort.',
       align: 'right',
       delay: 0.2,
@@ -60,6 +62,7 @@ export class Features {
         </svg>
       `,
       title: 'Business tools in one place',
+      link: 'https://workspace.google.com/marketplace/category/businesstools',
       desc: 'Connect Calendar, team access, and your product catalog in a single workflow.',
       align: 'left',
       delay: 0.1,
@@ -76,6 +79,7 @@ export class Features {
         </svg>
       `,
       title: 'Google Calendar integration',
+      link: 'https://developers.google.com/workspace/calendar/api/guides/overview',
       desc: 'Book appointments and manage scheduling without back-and-forth.',
       align: 'right',
       delay: 0.35,

@@ -139,6 +139,16 @@
   animation: floatCard 7s ease-in-out infinite alternate;
 }
 
+.chat-bubble-card[href] {
+  color: inherit;
+  text-decoration: none;
+}
+
+.chat-bubble-card[href]:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 4px;
+}
+
 .bubble-head h3 {
   display: inline-flex;
   flex-wrap: wrap;

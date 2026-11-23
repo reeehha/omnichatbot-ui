@@ -26,7 +26,19 @@
       [class.right]="card.align === 'right'"
       [class.left]="card.align === 'left'"
       [style.transform]="bubbleTransform(i, card.drift)">
-      <article class="chat-bubble-card">
+      <ng-container *ngIf="card.link; else staticCard">
+        <a class="chat-bubble-card" [href]="card.link" target="_blank" rel="noopener noreferrer">
+          <ng-container *ngTemplateOutlet="cardContent; context: { card: card }"></ng-container>
+        </a>
+      </ng-container>
+
+      <ng-template #staticCard>
+        <article class="chat-bubble-card">
+          <ng-container *ngTemplateOutlet="cardContent; context: { card: card }"></ng-container>
+        </article>
+      </ng-template>
+
+      <ng-template #cardContent let-card="card">
         <div class="bubble-head">
           <span class="bubble-icon" aria-hidden="true" [innerHTML]="iconSvg(card.icon)"></span>
           <h3>
@@ -35,7 +47,7 @@
           </h3>
         </div>
         <p>{{ card.desc }}</p>
-      </article>
+      </ng-template>
     </div>
   </div>
 
